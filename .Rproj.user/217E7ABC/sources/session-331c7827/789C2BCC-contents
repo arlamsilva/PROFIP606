@@ -1,0 +1,35 @@
+project:
+  type: website
+  output-dir: docs
+  
+execute:
+  cache: true
+  freeze: auto
+
+website:
+  title: "FIP 606"
+  navbar:
+    left:
+      - text: Análise de dados do projeto com nematoide
+        menu: 
+          - href: index.qmd
+            text: Início
+          - href: tra.fip606.qmd
+            text: Tipos de análises realizadas 
+         
+    right:
+      - icon: github
+        href: https://github.com/Arlamsilva
+      - icon: linkedin
+        href: https://linkedin.com/in/arlam-fernandes-596603162
+      - icon: twitter
+        href: https://twitter.com/arlam_da?t=2_JZ3BPWr192iJy9MZbVOw&s=08
+     
+format:
+  html:
+    theme: Yeti
+    css: styles.css
+    toc: true
+
+editor: visual
+

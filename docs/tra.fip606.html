@@ -186,13 +186,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <!-- sidebar -->
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">On this page</h2>
-   
-  <ul>
-  <li><a href="#traballho-da-disciplina-fip606" id="toc-traballho-da-disciplina-fip606" class="nav-link active" data-scroll-target="#traballho-da-disciplina-fip606">TRABALLHO DA DISCIPLINA FIP606</a></li>
-  </ul>
-</nav>
+        
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
@@ -220,8 +214,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
 </header>
 
-<section id="traballho-da-disciplina-fip606" class="level1">
-<h1>TRABALLHO DA DISCIPLINA FIP606</h1>
+<p>###TRABALLHO DA DISCIPLINA FIP606</p>
 <div class="cell" data-hash="tra.fip606_cache/html/unnamed-chunk-1_66b6b4a53eb5d5af3a819db4f12e93ba">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(readxl)</span>
@@ -233,7 +226,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 • `` -&gt; `...12`</code></pre>
 </div>
 </div>
-<p>#BOXPLOT PARA AS VARIAVEIS OVOS, JUVENIS E REDUÇÃO DO FATOR DE REPRODUÇAO</p>
+<p>###BOXPLOT PARA AS VARIAVEIS AVALIADAS</p>
 <div class="cell" data-hash="tra.fip606_cache/html/unnamed-chunk-2_8562784d876e0e67843d151fd4eb3cf4">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">boxplot</span>(ovos <span class="sc">~</span> trat, <span class="at">data =</span> fip)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
@@ -260,9 +253,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p><img src="tra.fip606_files/figure-html/unnamed-chunk-2-5.png" class="img-fluid" width="672"></p>
 </div>
 </div>
-<p>#ANOVA 1 FATOR #A ANOVA (Análise de Variância) é uma técnica estatística utilizada para comparar as médias de três ou mais grupos independentes. Ela permite determinar se existem diferenças significativas entre as médias dos grupos e identificar qual ou quais grupos diferem dos demais.</p>
-<p>#A principal função da ANOVA é testar a hipótese nula de que as médias dos grupos são iguais, ou seja, que não há diferenças significativas entre eles. Caso haja evidências estatísticas suficientes para rejeitar a hipótese nula, isso indica que pelo menos um dos grupos difere estatisticamente dos outros em relação à média.</p>
-<p>#Testar as premissas dos dados é uma etapa essencial para garantir a validade dos resultados, fornecer interpretações corretas, evitar erros estatísticos e selecionar o teste estatístico apropriado. Isso ajuda a obter conclusões mais confiáveis e robustas a partir da análise dos dados.</p>
+<p>###ANOVA 1 FATOR #A ANOVA (Análise de Variância) é uma técnica estatística utilizada para comparar as médias de três ou mais grupos independentes. Ela permite determinar se existem diferenças significativas entre as médias dos grupos e identificar qual ou quais grupos diferem dos demais.</p>
+<p>###A principal função da ANOVA é testar a hipótese nula de que as médias dos grupos são iguais, ou seja, que não há diferenças significativas entre eles. Caso haja evidências estatísticas suficientes para rejeitar a hipótese nula, isso indica que pelo menos um dos grupos difere estatisticamente dos outros em relação à média.</p>
+<p>###Testar as premissas dos dados é uma etapa essencial para garantir a validade dos resultados, fornecer interpretações corretas, evitar erros estatísticos e selecionar o teste estatístico apropriado. Isso ajuda a obter conclusões mais confiáveis e robustas a partir da análise dos dados.</p>
 <div class="cell" data-hash="tra.fip606_cache/html/unnamed-chunk-3_cea865b0d4c5365efafac08d8b4cd0ae">
 <div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>aov1<span class="ot">&lt;-</span> <span class="fu">aov</span>(pfr<span class="sc">~</span>trat, </span>
 <span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>            <span class="at">data =</span> fip)</span>
@@ -318,7 +311,7 @@ trat          1    0.0  0.0038   0.003  0.959
 Residuals   198  287.9  1.4540               </code></pre>
 </div>
 </div>
-<p>#TESTANDO AS PREMISSAS</p>
+<p>###TESTANDO AS PREMISSAS</p>
 <div class="cell" data-hash="tra.fip606_cache/html/unnamed-chunk-5_171cf1ac3d00d26ec0387bc8db7e5c10">
 <div class="sourceCode cell-code" id="cb21"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="fu">check_normality</span>(aov2)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
@@ -350,8 +343,8 @@ data:  aov2$residuals
 W = 0.99163, p-value = 0.3051</code></pre>
 </div>
 </div>
-<p>#TESTE NÃO PARAMETRICO PARA OVOS #O teste de Kruskal-Wallis é um teste não paramétrico utilizado para comparar as médias de três ou mais grupos independentes em uma variável dependente contínua. Ele é usado quando os dados não atendem aos pressupostos necessários para a realização de um teste paramétrico, como a análise de variância (ANOVA).</p>
-<p>#É importante ressaltar que o teste de Kruskal-Wallis avalia apenas diferenças entre os grupos, mas não identifica especificamente qual grupo difere de qual. Para identificar essas diferenças, podem ser utilizados testes post hoc, como o teste de Dunn ou o teste de Conover-Iman.</p>
+<p>###TESTE NÃO PARAMETRICO PARA OVOS #O teste de Kruskal-Wallis é um teste não paramétrico utilizado para comparar as médias de três ou mais grupos independentes em uma variável dependente contínua. Ele é usado quando os dados não atendem aos pressupostos necessários para a realização de um teste paramétrico, como a análise de variância (ANOVA).</p>
+<p>###É importante ressaltar que o teste de Kruskal-Wallis avalia apenas diferenças entre os grupos, mas não identifica especificamente qual grupo difere de qual. Para identificar essas diferenças, podem ser utilizados testes post hoc, como o teste de Dunn ou o teste de Conover-Iman.</p>
 <div class="cell" data-hash="tra.fip606_cache/html/unnamed-chunk-6_e794fdf19641478b5b48bdb452d70e91">
 <div class="sourceCode cell-code" id="cb30"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="co"># não paramétrico</span></span>
 <span id="cb30-2"><a href="#cb30-2" aria-hidden="true" tabindex="-1"></a><span class="fu">kruskal.test</span>(ovos <span class="sc">~</span> trat, <span class="at">data =</span> fip)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -434,7 +427,7 @@ Treatments with the same letter are not significantly different.
 <p><img src="tra.fip606_files/figure-html/unnamed-chunk-6-1.png" class="img-fluid" width="672"></p>
 </div>
 </div>
-<p>#ANOVA, E TESTE DAS PREMISSAS PARA JUVENIL</p>
+<p>###ANOVA, E TESTE DAS PREMISSAS PARA JUVENIL</p>
 <div class="cell" data-hash="tra.fip606_cache/html/unnamed-chunk-7_b5fc932cba8d5983280d9e8845f2c5b9">
 <div class="sourceCode cell-code" id="cb35"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a>aov3<span class="ot">&lt;-</span> <span class="fu">aov</span>(<span class="fu">sqrt</span>(juv)<span class="sc">~</span>trat, </span>
 <span id="cb35-2"><a href="#cb35-2" aria-hidden="true" tabindex="-1"></a>            <span class="at">data =</span> fip)</span>
@@ -476,7 +469,7 @@ data:  aov3$residuals
 W = 0.85702, p-value = 9.549e-13</code></pre>
 </div>
 </div>
-<p>##TESTE NÃO PARAMETRICO PARA JUVENIL</p>
+<p>###TESTE NÃO PARAMETRICO PARA JUVENIL</p>
 <div class="cell" data-hash="tra.fip606_cache/html/unnamed-chunk-8_8fb8882e47e0973dd800169fb22b5385">
 <div class="sourceCode cell-code" id="cb46"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb46-1"><a href="#cb46-1" aria-hidden="true" tabindex="-1"></a><span class="fu">kruskal.test</span>(juv <span class="sc">~</span> trat, <span class="at">data =</span> fip)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
@@ -558,7 +551,7 @@ Treatments with the same letter are not significantly different.
 <p><img src="tra.fip606_files/figure-html/unnamed-chunk-8-1.png" class="img-fluid" width="672"></p>
 </div>
 </div>
-<p>##FAZENDO ANOVA PARA FATOR DE REPRODUÇÃO (FR), E TESTANDO AS PRMISSAS</p>
+<p>###FAZENDO ANOVA PARA FATOR DE REPRODUÇÃO (FR), E TESTANDO AS PRMISSAS</p>
 <div class="cell" data-hash="tra.fip606_cache/html/unnamed-chunk-9_8f0a918ad1af2a463633da7144ae90c6">
 <div class="sourceCode cell-code" id="cb51"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb51-1"><a href="#cb51-1" aria-hidden="true" tabindex="-1"></a>aov4<span class="ot">&lt;-</span> <span class="fu">aov</span>(<span class="fu">sqrt</span>(fr)<span class="sc">~</span>trat, </span>
 <span id="cb51-2"><a href="#cb51-2" aria-hidden="true" tabindex="-1"></a>            <span class="at">data =</span> fip)</span>
@@ -600,7 +593,7 @@ data:  aov4$residuals
 W = 0.78991, p-value = 1.129e-15</code></pre>
 </div>
 </div>
-<p>##Teste não paramétricos para a variavel fator de reprodução</p>
+<p>###Teste não paramétricos para a variavel fator de reprodução</p>
 <div class="cell" data-hash="tra.fip606_cache/html/unnamed-chunk-10_5e5b23fb0e612f2e11cd04bc3298048e">
 <div class="sourceCode cell-code" id="cb62"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb62-1"><a href="#cb62-1" aria-hidden="true" tabindex="-1"></a><span class="fu">kruskal.test</span>(fr <span class="sc">~</span> trat, <span class="at">data =</span> fip)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
@@ -682,7 +675,7 @@ Treatments with the same letter are not significantly different.
 <p><img src="tra.fip606_files/figure-html/unnamed-chunk-10-1.png" class="img-fluid" width="672"></p>
 </div>
 </div>
-<p>#ANOVA PARA REDUÇÃO DO FATOR DE REPRODUÇÃO (RFR), E TESTANDO AS PREMISSAS</p>
+<p>###ANOVA PARA REDUÇÃO DO FATOR DE REPRODUÇÃO (RFR), E TESTANDO AS PREMISSAS</p>
 <div class="cell" data-hash="tra.fip606_cache/html/unnamed-chunk-11_60eaaf2df47a3c65818850b59c8fc906">
 <div class="sourceCode cell-code" id="cb67"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb67-1"><a href="#cb67-1" aria-hidden="true" tabindex="-1"></a>aov5<span class="ot">&lt;-</span> <span class="fu">aov</span>(<span class="fu">sqrt</span>(rfr)<span class="sc">~</span>trat, </span>
 <span id="cb67-2"><a href="#cb67-2" aria-hidden="true" tabindex="-1"></a>            <span class="at">data =</span> fip)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -728,7 +721,7 @@ data:  aov5$residuals
 W = 0.76609, p-value = 5.098e-16</code></pre>
 </div>
 </div>
-<p>##TESTE NÃO PARAMÉTRICO ULTIZANDO Kruskal-Wallis ARA A VARIAVEL REDUÇÃO DO FATOR DE REPRODUÇÃO, ESTE TESTE É REALIZANDO QUANDOS MEUS DADOS NÃO ATENDERAM MINHAS PREMISSAS.</p>
+<p>###TESTE NÃO PARAMÉTRICO ULTIZANDO Kruskal-Wallis ARA A VARIAVEL REDUÇÃO DO FATOR DE REPRODUÇÃO, ESTE TESTE É REALIZANDO QUANDOS MEUS DADOS NÃO ATENDERAM MINHAS PREMISSAS.</p>
 <div class="cell" data-hash="tra.fip606_cache/html/unnamed-chunk-12_7d4d8115ed7e36be9917d544264d84e1">
 <div class="sourceCode cell-code" id="cb80"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb80-1"><a href="#cb80-1" aria-hidden="true" tabindex="-1"></a><span class="co"># não paramétrico</span></span>
 <span id="cb80-2"><a href="#cb80-2" aria-hidden="true" tabindex="-1"></a><span class="fu">kruskal.test</span>(rfr <span class="sc">~</span> trat, <span class="at">data =</span> fip)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -811,7 +804,7 @@ Treatments with the same letter are not significantly different.
 <p><img src="tra.fip606_files/figure-html/unnamed-chunk-12-1.png" class="img-fluid" width="672"></p>
 </div>
 </div>
-<p>#Valores de P obtido para as variaveis analisadas</p>
+<p>###Valores de P obtido para as variaveis analisadas</p>
 <div class="cell" data-hash="tra.fip606_cache/html/unnamed-chunk-13_be4bd114c295efe7ec20223b3757abb2">
 <div class="sourceCode cell-code" id="cb85"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb85-1"><a href="#cb85-1" aria-hidden="true" tabindex="-1"></a><span class="fu">kruskal.test</span>(ovos<span class="sc">~</span>trat, <span class="at">data =</span> fip)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
@@ -848,7 +841,6 @@ Kruskal-Wallis chi-squared = 27.813, df = 19, p-value = 0.0871</code></pre>
 </div>
 
 
-</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
