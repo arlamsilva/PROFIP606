@@ -1,0 +1,218 @@
+---
+title: "TRA.FIP606"
+author: "ARLAM"
+format: html
+---
+
+# TRABALLHO DA DISCIPLINA FIP606
+
+```{r}
+library(tidyverse)
+library(readxl)
+
+fip <- read_excel("C:dados-fip606.xlsx")
+
+```
+
+#BOXPLOT PARA AS VARIAVEIS OVOS, JUVENIS E REDUÇÃO DO FATOR DE REPRODUÇAO
+
+```{r}
+
+boxplot(ovos ~ trat, data = fip)
+
+
+boxplot(juv ~ trat, data = fip)
+
+
+boxplot(rfr ~ trat, data = fip)
+
+
+fip$fr = as.numeric(fip$fr)
+
+boxplot(fr ~ trat, data = fip)
+
+
+fip$pfr = as.numeric(fip$pfr)
+
+boxplot(pfr ~ trat, data = fip)
+
+```
+
+#ANOVA 1 FATOR #A ANOVA (Análise de Variância) é uma técnica estatística utilizada para comparar as médias de três ou mais grupos independentes. Ela permite determinar se existem diferenças significativas entre as médias dos grupos e identificar qual ou quais grupos diferem dos demais.
+
+#A principal função da ANOVA é testar a hipótese nula de que as médias dos grupos são iguais, ou seja, que não há diferenças significativas entre eles. Caso haja evidências estatísticas suficientes para rejeitar a hipótese nula, isso indica que pelo menos um dos grupos difere estatisticamente dos outros em relação à média.
+
+#Testar as premissas dos dados é uma etapa essencial para garantir a validade dos resultados, fornecer interpretações corretas, evitar erros estatísticos e selecionar o teste estatístico apropriado. Isso ajuda a obter conclusões mais confiáveis e robustas a partir da análise dos dados.
+
+```{r}
+aov1<- aov(pfr~trat, 
+            data = fip)
+summary(aov1)
+
+
+
+#TESTE DE NORMALIDADE
+
+
+library(performance)
+check_normality(aov1)
+check_heteroscedasticity(aov1)
+library(DHARMa)
+plot(simulateResiduals(aov1))
+
+#teste de normalidade
+hist(aov1$residuals)
+shapiro.test(aov1$residuals)
+```
+
+#ANOVA PARA OVOS
+
+```{r}
+aov2<- aov(log(ovos)~trat, 
+            data = fip)
+summary(aov2)
+```
+
+#TESTANDO AS PREMISSAS
+
+```{r}
+check_normality(aov2)
+check_heteroscedasticity(aov2)
+plot(simulateResiduals(aov2))
+
+#teste de normalidade
+hist(aov2$residuals)
+shapiro.test(aov2$residuals)
+
+```
+
+#TESTE NÃO PARAMETRICO PARA OVOS #O teste de Kruskal-Wallis é um teste não paramétrico utilizado para comparar as médias de três ou mais grupos independentes em uma variável dependente contínua. Ele é usado quando os dados não atendem aos pressupostos necessários para a realização de um teste paramétrico, como a análise de variância (ANOVA).
+
+#É importante ressaltar que o teste de Kruskal-Wallis avalia apenas diferenças entre os grupos, mas não identifica especificamente qual grupo difere de qual. Para identificar essas diferenças, podem ser utilizados testes post hoc, como o teste de Dunn ou o teste de Conover-Iman.
+
+```{r}
+
+# não paramétrico
+kruskal.test(ovos ~ trat, data = fip)
+library(agricolae)
+kruskal(fip$ovos, fip$trat, 
+        console = TRUE)
+
+
+hist(fip$ovos)
+
+
+```
+
+#ANOVA, E TESTE DAS PREMISSAS PARA JUVENIL
+
+```{r}
+aov3<- aov(sqrt(juv)~trat, 
+            data = fip)
+summary(aov3)
+
+
+library(performance)
+check_normality(aov3)
+check_heteroscedasticity(aov3)
+library(DHARMa)
+plot(simulateResiduals(aov3))
+
+
+#teste de normalidade
+hist(aov3$residuals)
+shapiro.test(aov3$residuals)
+
+```
+
+##TESTE NÃO PARAMETRICO PARA JUVENIL
+
+```{r}
+
+
+kruskal.test(juv ~ trat, data = fip)
+library(agricolae)
+kruskal(fip$juv, fip$trat, 
+        console = TRUE)
+
+
+hist(fip$juv)
+
+
+```
+
+##FAZENDO ANOVA PARA FATOR DE REPRODUÇÃO (FR), E TESTANDO AS PRMISSAS
+
+```{r}
+aov4<- aov(sqrt(fr)~trat, 
+            data = fip)
+summary(aov4)
+
+
+library(performance)
+check_normality(aov4)
+check_heteroscedasticity(aov4)
+library(DHARMa)
+plot(simulateResiduals(aov4))
+
+
+#teste de normalidade
+hist(aov4$residuals)
+shapiro.test(aov4$residuals)
+
+```
+
+##Teste não paramétricos para a variavel fator de reprodução
+
+```{r}
+kruskal.test(fr ~ trat, data = fip)
+library(agricolae)
+kruskal(fip$fr, fip$trat, 
+        console = TRUE)
+
+
+hist(fip$fr)
+```
+
+#ANOVA PARA REDUÇÃO DO FATOR DE REPRODUÇÃO (RFR), E TESTANDO AS PREMISSAS
+
+```{r}
+aov5<- aov(sqrt(rfr)~trat, 
+            data = fip)
+summary(aov5)
+
+
+library(performance)
+check_normality(aov5)
+check_heteroscedasticity(aov5)
+library(DHARMa)
+plot(simulateResiduals(aov5))
+
+
+#teste de normalidade
+hist(aov5$residuals)
+shapiro.test(aov5$residuals)
+
+```
+
+##TESTE NÃO PARAMÉTRICO ULTIZANDO Kruskal-Wallis ARA A VARIAVEL REDUÇÃO DO FATOR DE REPRODUÇÃO, ESTE TESTE É REALIZANDO QUANDOS MEUS DADOS NÃO ATENDERAM MINHAS PREMISSAS.
+
+```{r}
+# não paramétrico
+kruskal.test(rfr ~ trat, data = fip)
+library(agricolae)
+kruskal(fip$rfr, fip$trat, 
+        console = TRUE)
+
+
+hist(fip$rfr)
+```
+
+#Valores de P obtido para as variaveis analisadas
+
+```{r}
+kruskal.test(ovos~trat, data = fip)
+kruskal.test(juv~trat, data = fip)
+kruskal.test(rfr~trat, data = fip)
+kruskal.test(pfr~trat, data = fip)
+```

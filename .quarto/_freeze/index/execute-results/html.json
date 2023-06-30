@@ -1,0 +1,14 @@
+{
+  "hash": "2b9fc6fb1ac8f6bd804e70ff0911c22b",
+  "result": {
+    "markdown": "---\ntitle: \"PF606\"\n---\n\n\nANÁLISE E VISUALIZAÇÃO DOS DADOS DO TRABALHO DA DISCIPLINA FIP606\n\n\n::: {.cell hash='index_cache/html/unnamed-chunk-1_f163e66671f76d3a3512df88a27061b5'}\n\n```{.r .cell-code}\n1 + 1\n```\n\n::: {.cell-output .cell-output-stdout}\n```\n[1] 2\n```\n:::\n:::\n",
+    "supporting": [],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}
