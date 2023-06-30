@@ -11,7 +11,7 @@
     "href": "index.html",
     "title": "PF606",
     "section": "",
-    "text": "ANÁLISE E VISUALIZAÇÃO DOS DADOS DO TRABALHO DA DISCIPLINA FIP606\nAvaliação da resistência de Café Arábica (Coffea arábica) ao Meloidogyne paranaensis\nNeste estudo, investigamos a resistência do café arábica ao nematoide Meloidogyne paranaensis e realizamos uma análise de dados exploratória. Foram feitos testes paramétricos e não paramétricos para as seguintes variaveis, peso fresco de raiz, ovos, juvenil, fator de reprodução, fenótipo. Utilizando técnicas estatísticas apropriadas, conduzimos análises exploratórias para compreender a relação entre a infestação pelo nematoide e a resistência do café arábica. Os resultados obtidos fornecem insights valiosos para a implementação de estratégias de manejo de pragas e proteção das plantações de café arábica contra o Meloidogyne paranaensis."
+    "text": "ANÁLISE E VISUALIZAÇÃO DOS DADOS DO TRABALHO DA DISCIPLINA FIP60\nO objetivo desse trabalho foi investigar a resistência do café arábica ao nematoide Meloidogyne paranaensis, avaliando o peso fresco de raiz, quantidades de ovos, população de juvenil e fator de reprodução. Utilizando técnicas estatísticas apropriadas, conduzimos análises exploratórias para compreender a relação entre a infestação pelo nematoide e a resistência do café arábica. Foi realizado anova para ambas as variaveis e testado as premissas para observação de normalidade e homocedasticidade. para as variaveis que não atenderam as premissas da anova, foi utilizado o teste não paramétricos Kruskal-Wallis, para a observação e interpretação dos valores de P."
   },
   {
     "objectID": "tra.fip606.html",
